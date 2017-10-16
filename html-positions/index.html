@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML - Positions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<section></section>
+
+<div class="fixed"> 1 </div>
+
+<section class="upper"></section>
+<section></section>
+<section></section>
+<section>
+    <div class="relative"> Relative block</div>
+</section>
+
+<div class="fixed-bottom"> 2 </div>
+
+<div class="abs"> Absolute block </div>
+
+<script>
+    var str = 'String - 1 <a href="http:///">';
+    var str_2 = "String - 2 <a href=\"http:///\"> ";
+    console.log(str, str_2);
+
+    var num = 1;
+    console.log(num);
+    var num = 1.2;
+    console.log(num);
+
+    var fruits = [];
+
+    for (var i = 0; i < 100; i++) {
+        fruits[fruits.length] = i;
+//        fruits.push(i);
+    }
+
+    for (var i = 0; i < 10; i++) {
+        console.log(fruits[i]);
+    }
+
+    fruits.forEach(function(item, index, array) {
+        console.log(item, index);
+    });
+
+</script>
+
+</body>
+</html>

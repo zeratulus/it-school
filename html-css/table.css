@@ -1,0 +1,23 @@
+table thead tr td,
+table tfoot tr td {
+    font-weight: bold;
+    text-align: center;
+    font-size: 48px;
+}
+table tr td {
+    border: 2px solid #000 !important;
+    padding: 5px;
+    margin: 0;
+    font-size: 24px;
+}
+table tbody tr td + td {
+    width: 350px;
+}
+/*table tbody td:hover {*/
+    /*background-color: rgba(255,0,0,0.4);*/
+    /*cursor: default;*/
+/*}*/
+table tbody tr:hover {
+    background-color: rgba(255,0,0,0.4);
+    cursor: default;
+}

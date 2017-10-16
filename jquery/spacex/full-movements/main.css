@@ -1,0 +1,25 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: url('../space-bg.jpg') no-repeat;
+    background-size: cover;
+}
+#spaceship {
+    position: absolute;
+    width: 150px;
+    height: auto;
+    z-index: 9999;
+}
+.laser {
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: rgb(255,0,0);
+    z-index: 99;
+    opacity: 0;
+    box-shadow: 0 0 10px rgb(255,0,0);
+}
+.laser-active {
+    opacity: 1;
+}

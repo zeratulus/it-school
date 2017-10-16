@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script type="text/javascript" src="jquery-2.1.1.min.js"></script>-->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<input id="val_x" type="number" placeholder="Введите X">
+<button id="get_x">Получить случайный X</button>
+<button id="calc">Посчитать</button>
+<h1>10566 * 365 / 23 * <span id="text_x_sqr">x * x</span> = <span id="text_y">y</span></h1>
+
+<script>
+    function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+    function getRandomX() {
+        $('#val_x').val(getRandomInt(1, 99999));
+    }
+    function calc() {
+        var x = $('#val_x').val();
+        var x2 = Math.pow(x, 2);
+        var y = 10566 * 365 / 23 * x2;
+        $('#text_x_sqr').html(x2);
+        $('#text_y').html(y);
+    }
+    $('#calc').on('click', calc);
+    $('#get_x').click(getRandomX);
+</script>
+</body>
+</html>

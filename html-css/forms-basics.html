@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms</title>
+    <link rel="stylesheet" href="forms.css">
+</head>
+<body>
+
+<form action="action/send.php" method="post">
+
+    <input type="email" name="email" class="form-control" required>
+    <input type="password" placeholder="Введите пароль">
+    <input type="number" min="0" max="10" value="5" step="0.00001">
+    <input type="button" value="Кнопка">
+    <input type="checkbox">
+
+    <input type="radio" name="type" value="1">
+    <input type="radio" name="type" value="2">
+
+
+    <input type="radio" name="type-1" value="3">
+    <input type="radio" name="type-1" value="4">
+
+    <input type="text" value="тут какой-то текст" name="fio">
+    <input type="tel" name="telephone">
+
+    <input type="submit" value="Отпраить">
+
+    <select name="options">
+        <option value="1">Красный</option>
+        <option value="2">Зелёный</option>
+        <option value="3">Керосин</option>
+        <option value="4">Апельсин</option>
+    </select>
+
+    <textarea name="text">Some text here</textarea>
+
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+body, p, div {
+    font-family: 'Arial';
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'StarcraftNormal';
+}
+h1 {
+    font-size: 42px;
+}
+h2 {
+    font-size: 36px;
+}
+header {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../image/header-toss.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo {
+    animation: fadeIn 4s 1;
+}
+nav {
+    animation: fadeIn 4s 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    opacity: 1;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+}
+nav a {
+    font-family: 'StarcraftNormal';
+    font-size: 28px;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: 0.4s all;
+}
+nav a:hover {
+    transform: scale(1.2);
+    color: rgb(255,255,0);
+    transition: 0.4s all;
+}
+#races {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+#races .image {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background-color: #000;
+    background-size: 70% 70%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 10px;
+}
+
+#races .image-toss {
+    width: 200px;
+    height: 200px;
+    border-radius: 200px;
+    background-color: #000;
+    background-size: 95% 95%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    margin: 10px;
+}
+
+#history {
+    display: block;
+    padding: 5px;
+    /*width: 100%;*/
+}
+
+#history p {
+    font-size: 22px;
+    padding: 5px;
+}
+
+article {
+    text-align: justify;
+}
+
+.img-left {
+    float: left;
+}
+
+.img-right {
+    float: right;
+}
+
+.article-image {
+    height: 280px;
+    width: auto;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+footer {
+    width: 100%;
+    min-height: 40px;
+    background-color: #000;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.separator {
+    background-color: #000;
+    color: #fff;
+    min-height: 80px;
+}
+
+.parallax {
+    width: 100%;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.btn-download {
+    width: 33%;
+    opacity: 0.3;
+    transition: 0.4s all;
+}
+
+.btn-download:hover {
+    opacity: 1;
+    transition: 0.4s all;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.shadowed {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+    background-color: transparent;
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

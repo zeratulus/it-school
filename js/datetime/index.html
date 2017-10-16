@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DateTime</title>
+</head>
+<style>
+    .flex {}
+</style>
+<body>
+
+<div class=""></div>
+
+<script>
+    //YYYY-MM-DD hh:mm:ss.sss
+    //1988-07-01 23:50:10.098
+
+//    var myDate = new Date();
+//    alert(myDate);
+
+//    alert(myDate.getFullYear());
+//    alert(myDate.getMonth());
+//    alert(myDate.getDate());
+//    alert(myDate.getDay()); // day of week dow
+
+
+//    var d = new Date(2013, 11, 32); // 32 декабря 2013 ?!?
+//    alert(d); // ... это 1 января 2014!
+
+    var d = new Date();
+//    d.setDate(d.getDate() - 7);
+
+    alert( d ); // выведет корректную дату
+
+    var options = {
+        era: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        weekday: 'long',
+        timezone: 'UTC',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+    };
+
+    alert( d.toLocaleString("ru", options) );
+
+
+</script>
+
+</body>
+</html>

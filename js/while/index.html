@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript While</title>
+    <script src="../../jquery/jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+<h1 id="text"></h1>
+
+</body>
+<script>
+    var str_1 = new String("I " + "m a JavaScript programmer");
+    var str = "I " + "m a JavaScript programmer";
+
+    alert(str.includes('Java'));
+
+    alert(str_1);
+    alert(str);
+
+    var str_2 = 'str'.charAt(0);
+    str_2.charAt(1);
+
+    alert(str.charAt(str.length - 1));
+
+//    $('#text').html('\u0FBE');
+    $('#text').html(str);
+    var x = 0;
+
+    while (x < 10) {
+        console.log(x);
+        if (x == 7) {
+            break;
+        }
+        x++;
+    }
+
+//    This is analog of while
+//    for (x = 0; x < 10; x++) {
+//        console.log(x);
+//    }
+
+    var i = 0;
+
+    do {
+        console.log(i);
+
+        i++;
+    } while (i < 10)
+</script>
+</html>

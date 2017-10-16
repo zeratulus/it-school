@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-2.1.1.min.js"></script>
+</head>
+<body>
+
+<p> X = </p>
+<input type="number" value="84" id="x">
+<h1>((256 + 142) * <span id="text-x">x</span>) / 0.25 = <span id="result">?</span></h1>
+<button onclick="calc();">Посчитать</button>
+</body>
+<script>
+    function calc() {
+        var x = $('#x').val();
+        var res = ((256 + 142) * x) / 0.25;
+        $('#text-x').html(x);
+        $('#result').html(res);
+//        alert('Я пощитал что результат равен ' + res);
+    }
+    $(document).ready(function () {
+//        calc();
+    });
+</script>
+</html>

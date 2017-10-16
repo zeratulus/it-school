@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Space X - Mouse Movements Demo</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="../../jquery-2.1.1.min.js"></script>
+</head>
+<body>
+    <img id="spaceship" src="../spaceship.png" style="left: 0px; top: 0px;">
+
+    <div id="laser" class="laser" style="left: 0px;"></div>
+</body>
+<script>
+var $spaceship = $('#spaceship');
+var $laser = $('#laser');
+
+$(document).mousemove(function (ev) {
+    var screen_y = window.innerHeight;
+
+    var mx = ev.clientX;
+    var my = ev.clientY;
+
+    $spaceship.css('top', screen_y - $spaceship.height());
+    $spaceship.css('left', mx - 75);
+});
+
+$(document).click(function (ev) {
+    var mx = ev.clientX;
+
+    $laser.css('left', mx - 3);
+    $laser.addClass('laser-active');
+    setTimeout(function () {
+        $laser.removeClass('laser-active');
+    }, 100);
+})
+</script>
+</html>

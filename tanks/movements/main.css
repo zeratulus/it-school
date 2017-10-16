@@ -1,0 +1,19 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#info {
+    text-align: right;
+}
+#tank {
+    position: absolute;
+    /*border: 1px solid #000;*/
+    z-index: 99;
+}
+.shoot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+}
