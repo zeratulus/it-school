@@ -1,0 +1,108 @@
+div {
+    padding: 20px;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    width: 100%;
+    height: 100vh;
+}
+
+.box {
+    border: 2px solid #000;
+    width: 100px;
+    height: 100px;
+}
+
+.absolute {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+    background-color: #fff;
+    z-index: 99;
+}
+.absolute-2 {
+    position: absolute;
+    top: 150px;
+    left: 150px;
+    background-color: #888;
+    z-index: 98;
+    animation: .5s pulse infinite;
+    animation-timing-function: ease-in;
+}
+.absolute-3 {
+    position: absolute;
+    top: 1500px;
+    left: 150px;
+    background-color: #888;
+    z-index: 98;
+}
+.fixed {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+.fixed-2 {
+    position: fixed;
+    bottom: 0;
+    left: calc(50% - 50px);
+    transition: 1s all;
+}
+.fixed-2:hover {
+    /*transition: 1s all;*/
+    background-color: #999;
+}
+.slider {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: -128px;
+}
+#idhere {
+
+}
+.slide-1 {
+    width: 100%;
+    height: 100%;
+    background: #999 url('../../image/bokeh-cover-bg.jpg') no-repeat;
+    background-size: cover;
+}
+
+.slider .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    background-color: #fff;
+    border: 2px solid #fff;
+    border-radius: 60px;
+    transition: 0.4s;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.slider .control:hover {
+    border: 2px solid #000;
+    transition: 0.4s;
+}
+.slider .control-left {
+    position: relative;
+    top: calc(-64px - 50vh);
+    left: 6px;
+}
+
+.slider .control-right {
+    position: relative;
+    top: calc(-128px - 50vh);
+    left: calc(100vw - 84px);
+}
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1) rotate(-15deg);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}

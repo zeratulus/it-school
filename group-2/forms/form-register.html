@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .form-control {
+            display: block;
+            padding: 5px;
+            margin: 10px;
+            border: 2px solid #999;
+            transition: 1s all;
+            width: calc(100% - 10px - 10px - 5px - 5px);
+            height: 30px;
+            /* font routine */
+            font-size: 18px;
+            /*font-weight: 900;*/
+            font-family: 'Impact', sans-serif;
+            color: #000;
+        }
+        .form-control:hover {
+            transition: 1s all;
+            border: 2px solid #000;
+        }
+        .btn {
+            height: 60px;
+            min-width: 200px;
+            text-align: center;
+            background: linear-gradient(#999, #000);
+        }
+    </style>
+</head>
+<body>
+
+<form method="get" action="">
+    <input type="email" name="email" required placeholder="Введите електронный адрес" class="form-control">
+    <input type="text" name="name" required placeholder="Введите имя" class="form-control">
+    <input type="password" name="password" required placeholder="Введите пароль" class="form-control">
+    <input type="password" name="confirm" required placeholder="повторите пароль" class="form-control">
+
+    <input type="submit" value="Отправить" class="btn">
+</form>
+
+</body>
+</html>

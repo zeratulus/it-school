@@ -47,7 +47,7 @@ if (!$agreement) {
     die();
 }
 
-$db = new DBMySQLi(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DB);
+//$db = new DBMySQLi(DB_HOST, DB_USERNAME, DB_PASSWORD, DB_DB);
 
 $result = $db->query('INSERT INTO `users`(`password`, `email`, `login`) VALUES (MD5("'.$pass.'"), "'.$db->escape($email).'", "'.$db->escape($login).'");');
 

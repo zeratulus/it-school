@@ -6,14 +6,25 @@ input, select {
     display: block;
     height: 60px;
     font-size: 48px;
+    font-family: 'Impact', sans-serif;
     width: calc(100% - 20px);
-    /*width: 100%;*/
     margin: 10px;
     border: 2px solid #000;
+    border-radius: 8px;
+    padding: 5px 5px 5px 15px;
+    outline: none;
 }
 input:hover, select:hover {
     color: #999;
     border: 2px solid #999;
+    outline: none;
+}
+input:active, select:active,
+input:focus, select:focus{
+    color: #999;
+    border: 2px solid #999;
+    outline: none;
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.6);
 }
 input[type="radio"] {
     width: 150px;
@@ -28,6 +39,7 @@ input[type="checkbox"] {
     color: #000;
     border: none;
     border-bottom: 4px solid #000;
+    transition: 1s all;
 }
 .form-control:hover,
 .form-control:focus,
@@ -36,6 +48,16 @@ input[type="checkbox"] {
     border: none;
     border-bottom: 4px solid red;
     outline: none;
+    transition: 1s all;
+}
+input[type="button"] {
+    transition: 1s all;
+}
+input[type="radio"]:focus,
+input[type="radio"]:active {
+    outline: 2px solid #000;
+    -moz-outline-radius: 150px;
+    /*box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);*/
 }
 textarea {
     width: 100%;
@@ -45,6 +67,6 @@ textarea {
     transition: 2s;
 }
 textarea:hover {
-    box-shadow: 0 0 8px 5px rgba(255,0,0,0.85);
+    box-shadow: 0 0 18px 0 rgba(255,255,0,0.85);
     transition: 2s;
 }
