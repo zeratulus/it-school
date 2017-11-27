@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Spectral+SC');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@font-face {
+    font-family: 'Bizon';
+    src: url('fonts/Bizon/Bizon.ttf') format('truetype');
+    font-weight: normal;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Spectral SC', serif;
+}
+body, p, div {
+    font-family: 'Montserrat', sans-serif;
+}
+h1 {
+    font-size: 68px;
+    color: #025ff4;
+}
+h2 {
+    font-size: 58px;
+    color: rgb(69, 169, 70);
+}
+h6 {
+    font-family: 'Bizon';
+    font-size: 78px;
+    color: rgba(69, 169, 70, 1);
+    text-align: center;
+    line-height: 140px;
+    /*background-color: #1da4e2;*/
+    vertical-align: middle;
+    text-shadow: -10px 10px 16px rgba(0,0,0,0.8), 0 0 32px rgba(0,0,255,0.5);
+}
+
+p {
+    font-size: 18px;
+    text-align: justify;
+    text-indent: 40px;
+}
