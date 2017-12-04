@@ -19,6 +19,7 @@ $result = 4 + 4;
 $a = 16;
 $b = 10;
 $c = $a * $b;
+$c1 = 16 * 10;
 
 // Возможные арифметические действия +, -, *, / (плюс, минус, умножить, разделить)
 
@@ -45,6 +46,10 @@ if ($a > $b) {
     // что то делаем
 } elseif ($a < $b) {
     //делаем что-то если а меньше b
+//} elseif ($a === $b) {
+
+//} elseif ($a === $b) {
+
 } else {
     // если не равно или равно
 }
@@ -53,32 +58,54 @@ if ($a > $b) {
 // ">" - больше
 // "<" - меньше
 //">=" - больше или равно
-//">=" - меньше или равно
-//"=" - равно
+//"<=" - меньше или равно
+//"==" - равно
 //"!="  - не равно
-
-//В если - то в условие можно передавать функции. Пример: Если строка не пуста
-if (!empty($str)) {
-    // делаем что-то
-}
 
 //если строка пуста
 if (empty($str)) {
 
 }
 
-function something() {
-    echo 'Something happend';
+//В если - то в условие можно передавать функции. Пример: Если строка не пуста
+if (!empty($str)) {
+    // делаем что-то
 }
 
-$result = something();
+$isDoorLocked = true;
+$isHandFree = true;
+$isKeyExists = false;
+
+if ($isDoorLocked && $isHandFree && $isKeyExists) {
+
+}
+
+if ($isDoorLocked && $isHandFree || $isKeyExists) {
+
+}
+
+//function getCustomerIdByEmail($email) {
+// return $id;
+//}
+
+function something() {
+    return 'Something happend';
+}
+
+//$result = something();
+something();
 
 function somethingReturn() {
     //...
-    $result ='Something happend';
+    $result = 'Something happend';
     return $result;
 //    return 'Something happend';
 }
 
 $result = somethingReturn();
 echo $result;
+
+function sum($a, $b) {
+//    return $a + $b;
+    return (int)$a + (int)$b;
+}
