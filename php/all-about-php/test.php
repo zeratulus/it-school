@@ -109,3 +109,5 @@ function sum($a, $b) {
 //    return $a + $b;
     return (int)$a + (int)$b;
 }
+
+header('Location: ' . $url); //301 Redirect
