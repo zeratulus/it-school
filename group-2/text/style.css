@@ -5,6 +5,11 @@
     src: url('fonts/Bizon/Bizon.ttf') format('truetype');
     font-weight: normal;
 }
+
+input {
+
+}
+
 h1, h2, h3, h4, h5 {
     font-family: 'Spectral SC', serif;
 }
@@ -34,4 +39,12 @@ p {
     font-size: 18px;
     text-align: justify;
     text-indent: 40px;
+}
+
+.someClassName {  /* Селектор для аттрибута тега class со значением someClassName class="someClassName" */
+
+}
+
+#someIdName { /* Селектор для аттрибута тега id со значением someIdName id="someIdName" */
+
 }

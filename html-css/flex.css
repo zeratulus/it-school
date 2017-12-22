@@ -15,7 +15,7 @@ body {
 
 .flex-center {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
     height: 100%;
@@ -53,4 +53,12 @@ section {
 
 .flex-wrap {
     flex-wrap: wrap;
+}
+
+.flex-around {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    text-align: center;
 }

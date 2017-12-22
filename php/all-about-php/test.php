@@ -1,4 +1,5 @@
 <?php
+ini_set('display_errors', 1);
 
 $array = array(); //Пустой массив
 
@@ -80,6 +81,14 @@ if ($isDoorLocked && $isHandFree && $isKeyExists) {
 
 }
 
+if (($a > $b) || ($isDoorLocked)) {
+
+}
+
+if (($a > $b) || $isDoorLocked) {
+
+}
+
 if ($isDoorLocked && $isHandFree || $isKeyExists) {
 
 }
@@ -87,6 +96,11 @@ if ($isDoorLocked && $isHandFree || $isKeyExists) {
 //function getCustomerIdByEmail($email) {
 // return $id;
 //}
+
+function abs($a, $b) {
+    return $a + $b;
+}
+echo '<br><br>';
 
 function something() {
     return 'Something happend';
@@ -109,5 +123,8 @@ function sum($a, $b) {
 //    return $a + $b;
     return (int)$a + (int)$b;
 }
+// http://localhost
+$url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
 
+// http://localhost/homework/get.php?name=Name&....
 header('Location: ' . $url); //301 Redirect
