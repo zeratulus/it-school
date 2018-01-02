@@ -65,6 +65,7 @@ section {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: flex-start;
+
 }
 .auto-height {
     height: auto !important;

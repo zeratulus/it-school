@@ -6,7 +6,7 @@ $array = array(); //Пустой массив
 $some_array = array(
     'id'     => 8,
     'name'   => 'Jon Doe',
-    'email'  => 'jon.doe@example.com'
+    'email'  => 'jon.doe@example.com',
 ); //Ассоциативный массив с данными
 
 //Пример вывода данных из массива и конкетанеция строк (сложение строк)
@@ -127,4 +127,4 @@ function sum($a, $b) {
 $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
 
 // http://localhost/homework/get.php?name=Name&....
-header('Location: ' . $url); //301 Redirect
+//header('Location: ' . $url); //301 Redirect
