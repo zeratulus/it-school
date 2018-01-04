@@ -9,7 +9,6 @@
 function ax2bxc($a, $b, $c) {
     // a*x*x + b*x + c = 0
     //$a * $x * $x + $b * $x + $c = 0;
-//    5 - 9 - 2
     $results = array();
     $d = $b ** 2 - 4 * $a * $c;
 //    echo $d . '<br>';

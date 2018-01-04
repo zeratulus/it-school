@@ -16,4 +16,3 @@ $x = mt_rand(1,5);
 echo "x = " . $x ."<br>" ;
 echo "a = " . $a ."<br>" ;
 calc($x,$a);
-
