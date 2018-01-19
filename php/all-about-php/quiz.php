@@ -22,7 +22,7 @@ $data = array();
 while ($data[] = $results->fetch_assoc()) {
 
 };
-foreach ($data as $item){
+foreach ($data as $item) {
     var_dump($item);
     echo "<br>";
 }
