@@ -41,6 +41,6 @@ var_dump($room1);
 echo '<br>';
 
 $app = new Apartment(1, 1, 1000);
-$app->setHeight();
+$app->setHeight(8);
 var_dump($app);
 echo $app->capacity();

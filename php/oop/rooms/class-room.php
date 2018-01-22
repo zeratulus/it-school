@@ -12,8 +12,6 @@ class Room {
     private $square;
     public $floor;
 
-
-
     public function __construct($number = '', $floor = '', $square = '') {
         $this->number = $number;
         $this->floor = $floor;
