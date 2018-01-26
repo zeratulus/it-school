@@ -8,9 +8,9 @@
 
 function showUnitParams ($unit) {
     echo 'Name: ' . $unit->name . '<br>';
-    echo 'HP: ' . $unit->hp . '<br>'; //Healt Points
-    echo 'MP: ' . $unit->mp . '<br>'; //Mana Points
-    echo 'AP: ' . $unit->ap . '<br>'; //Armor Points
-    echo 'AT: ' . $unit->armor_type . '<br>';
-    echo 'SP: ' . $unit->speed . '<br>';
+    echo 'Health Points: ' . $unit->hp . '<br>'; //Healt Points
+    echo 'Armor Points: ' . $unit->ap . '<br>'; //Armor Points
+    echo 'Mana Points: ' . $unit->mp . '<br>'; //Mana Points
+    echo 'Armor Type: ' . $unit->armor_type . '<br>';
+    echo 'Speed: ' . $unit->speed . '<br><br>';
 }

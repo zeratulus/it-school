@@ -34,17 +34,21 @@ class Unit
 
     public function getDamage($damage, $damage_type) {
         if ($this->armor_type == 2) { //Medium Armor
-            $hp_damage = $damage * $damage_type * 0.75;
+            $full_damage = $damage * $damage_type * 0.75;
+            $ap_koef = 0.4;
         } elseif ($this->armor_type == 3) { //Heavy Armor
-            $hp_damage = $damage * $damage_type * 0.5;
-        } else { //Standart Armor
-            $hp_damage = $damage * $damage_type;
+            $full_damage = $damage * $damage_type * 0.5;
+            $ap_koef = 0.6;
+        } else { //Light Armor
+            $full_damage = $damage * $damage_type;
+            $ap_koef = 0.2;
         }
 
         if ($this->ap > 0) {
-            $hp_damage = $hp_damage / 2;
-            $ap_damage = $hp_damage;
+            $ap_damage = $full_damage * $ap_koef;
+            $hp_damage = $full_damage - $ap_damage;
         } else {
+            $hp_damage = $full_damage;
             $ap_damage = 0;
         }
 
