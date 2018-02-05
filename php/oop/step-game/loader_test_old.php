@@ -6,6 +6,9 @@
  * Time: 18:14
  */
 
+//SOME SQL EXAMPLES:
+//INSERT INTO battles(id, player_id, p_hp, p_ap, p_mp, e_hp, e_ap, e_mp, enemy_id) VALUES (1, 1, 70, 0, 30, 75, 75, 75, 1)
+
 ini_set('display_errors', 1);
 
 require_once 'config.php';
@@ -28,6 +31,7 @@ $battle_info = $battle->load(1);
 $player = new GameObjects\BattleUnit(1, $battle_info['p_hp'], $battle_info['p_mp'], $battle_info['p_ap'], 3, 5, 'img/cat.jpg', 'I am Player', 5, 5);
 
 $enemy_info = $load->enemy(1);
+//$enemy = $factory->createEnemy($some_enemy_id);
 $enemy = new GameObjects\BattleUnit($enemy_info['enemy_id'], $battle_info['e_hp'], $battle_info['e_mp'], $battle_info['e_ap'], $enemy_info['armor_type'], $enemy_info['speed'], $enemy_info['image'], $enemy_info['name'], $enemy_info['damage'], $enemy_info['damage_type']);
 
 if ($request->server['REQUEST_METHOD'] == 'POST') {
@@ -36,15 +40,18 @@ if ($request->server['REQUEST_METHOD'] == 'POST') {
 
     if ($enemy->hp > 0) {
         $battle->update(1, $player, $enemy);
+//        $db->query('UPDATE battles SET player_id=1, p_hp='.$player->hp.', p_ap='.$player->ap.', p_mp='.$player->mp.', e_hp='.$enemy->hp.', e_ap='.$enemy->ap.', e_mp='.$enemy->mp.', enemy_id=1 WHERE id=1');
     } else {
         // End of battle, player earn XP by enemy_id
         $battle->delete($battle_info['id']);
+//        $db->query('DELETE FROM battles WHERE id = ' . $battle_info['id']);
+
         //$enemy_info['gain_xp']
         //$enemy_info['gain_price']
     }
 }
 
-var_dump($load->getRandomEnemy());
+//var_dump($load->getRandomEnemy());
 
 ?>
 

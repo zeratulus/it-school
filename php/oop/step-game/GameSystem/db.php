@@ -5,11 +5,14 @@
  * Date: 26.01.18
  * Time: 18:22
  */
+
+namespace GameSystem;
+
 class DB {
     private $link;
 
     public function __construct($host, $port, $user, $pass, $db) {
-        $this->link = new mysqli($host, $user, $pass, $db, $port);
+        $this->link = new \mysqli($host, $user, $pass, $db, $port);
         $this->link->set_charset('utf8');
     }
 

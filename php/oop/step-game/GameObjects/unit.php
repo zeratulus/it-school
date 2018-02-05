@@ -10,6 +10,8 @@ namespace GameObjects;
 
 class Unit
 {
+    public $id;
+
     public $image;
 
     public $hp; //Healt Points
@@ -20,8 +22,9 @@ class Unit
 
     public $name;
 
-    public function __construct($hp, $mp, $ap, $armor_type, $speed, $image, $name)
+    public function __construct($id, $hp, $mp, $ap, $armor_type, $speed, $image, $name)
     {
+        $this->id = $id;
         $this->image = $image;
 
         $this->hp = $hp;

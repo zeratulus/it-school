@@ -7,6 +7,7 @@
  */
 
 function showUnitParams ($unit) {
+    echo 'ID: ' . $unit->id . '<br>';
     echo 'Name: ' . $unit->name . '<br>';
     echo 'Health Points: ' . $unit->hp . '<br>'; //Healt Points
     echo 'Armor Points: ' . $unit->ap . '<br>'; //Armor Points
