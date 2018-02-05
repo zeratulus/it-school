@@ -5,6 +5,8 @@
 }
 .flex {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .flex-menu {
     display: flex;
