@@ -8,6 +8,8 @@
 
 namespace GameSystem;
 
+use GameObjects;
+
 class Battle extends DBInstance
 {
     public function __construct(DB $db)
