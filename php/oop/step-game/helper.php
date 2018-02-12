@@ -23,9 +23,9 @@ function salt($length = 32) {
     for ($i = 0; $i < $length; $i++) {
 
         if (mt_rand(0, 1)) {
-            $salt .= strtoupper($alphabet[mt_rand(0, count($alphabet))]);
+            $salt .= strtoupper($alphabet[mt_rand(0, count($alphabet) - 1)]);
         } else {
-            $salt .= $alphabet[mt_rand(0, count($alphabet))];
+            $salt .= $alphabet[mt_rand(0, count($alphabet) - 1)];
         }
 
     }

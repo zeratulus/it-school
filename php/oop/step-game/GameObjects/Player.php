@@ -12,6 +12,8 @@ namespace GameObjects;
 use GameSystem\DB;
 use GameSystem\DBInstance;
 
+//require_once '../helper.php';
+
 class Player extends DBInstance
 {
 
@@ -21,22 +23,22 @@ class Player extends DBInstance
     }
 
     public function auth($login, $password) {
-
-        $result = $this->db->query('SELECT * FROM users WHERE login = ' . $login . 'LIMIT 1');
-
-        $hash = md5($password . $result['salt']);
-
-        if ($result['hash'] == $hash) {
-            return true;
+        $results = $this->db->query('SELECT * FROM players WHERE login = \'' . $login . '\' LIMIT 1');
+        if ($results->num_rows) {
+            $hash = md5($password . $results->row['salt']);
+            if ($results->row['hash'] == $hash) {
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
-
     }
 
     public function isLoginExists($login) {
-        $results = $this->db->query('SELECT * FROM users WHERE login = \'' . $login .'\'');
-        if ($results->num_rows > 0) {
+        $results = $this->db->query('SELECT * FROM players WHERE login = \'' . $login .'\'');
+        if ($results->num_rows) {
             return true;
         } else {
             return false;
@@ -45,13 +47,19 @@ class Player extends DBInstance
 
     public function register($data = array()) {
         if (!$this->isLoginExists($data['login'])) {
-            $salt = salt();
-            $hash = md5($data['password'] . $salt);
-            $this->db->query('INSERT INTO players(login, email, hash, salt, lvl, exp, gold, items_id) VALUES (\''.$data['login'].'\', \''.$data['email'].'\', \''.$hash.'\', \''.$salt.'\', 0, 0, 0, NULL);');
-            return true;
+            if ($data['password_confirmation'] == $data['password']) {
+                $salt = salt();
+                $hash = md5($data['password'] . $salt);
+                $this->db->query('INSERT INTO players(login, email, hash, salt, lvl, exp, gold, items_id) VALUES (\''.$data['login'].'\', \''.$data['email'].'\', \''.$hash.'\', \''.$salt.'\', 0, 0, 0, 0);');
+                return true;
+            } else {
+                return false;
+            }
         } else {
             return false;
         }
     }
+
+
 
 }
