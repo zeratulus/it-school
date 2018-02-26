@@ -31,3 +31,8 @@ function salt($length = 32) {
     }
     return $salt;
 }
+function capitalizeString($str) {
+    $first_letter = strtoupper($str[0]);
+    $other_letters = substr($str, 1, strlen($str));
+    return $first_letter . $other_letters;
+}

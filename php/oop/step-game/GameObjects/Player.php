@@ -16,10 +16,12 @@ use GameSystem\DBInstance;
 
 class Player extends DBInstance
 {
+    public $isLogged;
 
     public function __construct(DB $db)
     {
      parent::__construct($db);
+     $this->isLogged = false;
     }
 
     public function auth($login, $password) {
@@ -27,11 +29,14 @@ class Player extends DBInstance
         if ($results->num_rows) {
             $hash = md5($password . $results->row['salt']);
             if ($results->row['hash'] == $hash) {
+                $this->isLogged = true;
                 return true;
             } else {
+                $this->isLogged = false;
                 return false;
             }
         } else {
+            $this->isLogged = false;
             return false;
         }
     }
