@@ -8,7 +8,6 @@
 
 namespace GameSystem;
 
-
 class Router {
 
     public $path;
@@ -16,30 +15,39 @@ class Router {
     public $class;
     public $method = 'index';
 
-    public function getRoute(Request $request) {
-        if (isset($request->get['route'])) {
-            $route = explode('/', $request->get['route']);
-            $this->path = $route[0];
-            $this->route = $route[1];
+    private function makeAction($route) {
+        $route = explode('/', $route);
+        $this->path = $route[0];
+        $this->route = $route[1];
 
-            $file = APP_DIR . 'controller/' . $this->path . '/' . $this->route . '.php';
-            if (is_file($file)) {
-                include($file);
+        $file = APP_DIR . 'controller/' . $this->path . '/' . $this->route . '.php';
+        if (is_file($file)) {
+            include($file);
 
-                $this->class = 'Controller' . capitalizeString($this->path) . capitalizeString($this->route);     //ControllerAccountLogin
+            $this->class = 'Controller' . capitalizeString($this->path) . capitalizeString($this->route);     //ControllerAccountLogin
 
-//                echo 'This is File ' . $this->class;
+            $controller = new $this->class();
 
-                $controller = new $this->class();
+            $action = array($controller, $this->method);
 
-                if (is_callable(array($controller, $this->method))) {
-                    return call_user_func(array($controller, $this->method), '');
-                }
-
-            } else {
-                echo 'This is not a File';
+            if (is_callable($action)) {
+                return call_user_func($action, '');
             }
 
+        } else {
+            include(APP_DIR . 'controller/error/404.php');
+            $this->class = 'ControllerError404';
+            $controller = new $this->class();
+            $action = array($controller, $this->method);
+            return call_user_func($action, '');
+        }
+    }
+
+    public function getRoute(Request $request) {
+        if (isset($request->get['route'])) {
+            $this->makeAction($request->get['route']);
+        } else {
+            $this->makeAction('home/home');
         }
     }
 

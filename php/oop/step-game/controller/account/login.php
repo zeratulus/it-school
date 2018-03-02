@@ -6,8 +6,7 @@
  * Time: 18:21
  */
 
-
-class ControllerAccountLogin {
+class ControllerAccountLogin extends GameSystem\Controller {
 
     public function index() {
 
@@ -28,7 +27,7 @@ class ControllerAccountLogin {
     <div class="container">
 
         <div class="well">
-            <form action="index.php?route=account/login" method="post" class="form-horizontal">
+            <form action="'.$this->link->url('account/login').'" method="post" class="form-horizontal">
 
                 <div class="form-group">
                     <label class="col-sm-2" for="input-email">Введите Ваш E-mail</label>
@@ -45,7 +44,7 @@ class ControllerAccountLogin {
                 <div class="flex-center">
                     <button type="submit" class="btn btp-primary text-uppercase">Вход</button>
                 </div>
-                <a href="forgotten.php">Забыли пароль?</a>
+                <a href="' . $this->link->url('account/forgotten') .'">Забыли пароль?</a>
                 </div>
 
             </form>

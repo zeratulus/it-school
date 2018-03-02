@@ -16,18 +16,21 @@ class Application {
     public $request;
     public $player;
     public $router;
+    public $link;
 
     public function __construct() {
         $this->request = new Request();
         $this->db = new DB(DB_HOST, DB_PORT, DB_USER, DB_PASS, DB_DB);
         $this->player = new GameObjects\Player($this->db);
         $this->router = new Router();
+        $this->link = new Link();
     }
 
     public function __destruct() {
         $this->db = NULL;
         $this->request = NULL;
         $this->player = NULL;
+        $this->link = NULL;
     }
 
 
