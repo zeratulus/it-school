@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bootsrap Forms Example</title>
+    <link rel="stylesheet" href="../../bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../../font-awesome/css/font-awesome.css">
+    <style>
+        .flex-center {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .clr-dollar {
+            background-color: lightgreen;
+            color: #000;
+        }
+        .fa-2x {
+            font-size: 24px;
+        }
+        .btn-margin-inline {
+            margin-top: 25px;
+        }
+        .static-checkbox {
+            height: 20px;
+        }
+    </style>
+</head>
+<body class="container">
+
+    <div class="col-sm-12">
+
+        <h1>Форма входа</h1>
+
+        <form class="form-horizontal well" action="" method="post">
+
+            <div class="form-group">
+                <label for="input-email" class="col-sm-2">E-mail</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="email" name="email" id="input-email" placeholder="Введите Ваш E-mail" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="input-password" class="col-sm-2">Пароль</label>
+                <div class="col-sm-10">
+                    <input class="form-control" type="password" name="password" id="input-password" placeholder="Введите Ваш пароль" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="input-password" class="col-sm-2">Пароль</label>
+                <div class="col-sm-6">
+                    <div class="input-group">
+                        <span class="input-group-addon">Перечислить всего:</span>
+                        <input type="text" class="form-control" placeholder="Укажите цену пополнения">
+                        <span class="input-group-addon clr-dollar">$</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class = "col-lg-6">
+                <div class = "input-group input-group-lg">
+                    <input type = "text" class = "form-control" placeholder="Поиск по сайту">
+                    <span class = "input-group-btn">
+                        <button class = "btn btn-success" type = "button"><i class="fa fa-android fa-2x"></i></button>
+                    </span>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 static-checkbox">
+                    <div class="form-group">
+                        <label for="save-password">
+                            <input type="checkbox" class="checkbox checkbox-inline" id="save-password">
+                            Запомнить пароль
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 static-checkbox">
+                    <div class="form-group">
+                        <label for="input-radio-1">
+                            <input type="radio" class="checkbox checkbox-inline" id="input-radio-1" name="option">
+                            Black
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 static-checkbox">
+                    <div class="form-group">
+                        <label for="input-radio-2">
+                            <input type="radio" class="checkbox checkbox-inline" id="input-radio-2" name="option">
+                            Gold
+                        </label>
+                    </div>
+                </div>
+                <div class="col-sm-12 static-checkbox">
+                    <div class="form-group">
+                        <label for="input-radio-3">
+                            <input type="radio" class="checkbox checkbox-inline" id="input-radio-3" name="option">
+                            Cyan
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-center">
+                <button type="submit" class="btn btn-primary">Войти</button>
+            </div>
+
+
+
+        </form>
+
+    </div>
+
+
+    <div class="col-sm-12">
+
+        <h1>Форма входа</h1>
+
+        <form class="form-inline well" action="" method="post">
+
+            <div class="form-group">
+                <label for="input-email" class="col-sm-12">E-mail</label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="email" name="email" id="input-email" placeholder="Введите Ваш E-mail" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="input-password" class="col-sm-12">Пароль</label>
+                <div class="col-sm-12">
+                    <input class="form-control" type="password" name="password" id="input-password" placeholder="Введите Ваш пароль" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-margin-inline">Войти</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+</body>
+</html>
