@@ -40,3 +40,11 @@ function capitalizeString($str) {
         return $str;
     }
 }
+function checkDebug(\GameSystem\Request $request) {
+    //php storm local web server routine
+    if (isset($request->get['_ijt'])) {
+        return $request->get['_ijt'];
+    } else {
+        return false;
+    }
+}

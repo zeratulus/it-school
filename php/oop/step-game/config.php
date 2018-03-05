@@ -11,4 +11,14 @@ define('DB_USER', 'root');
 define('DB_PASS', 'x909c9f0');
 define('DB_DB', 'oop-step-game');
 
-define('APP_DIR', '/home/ailus/Projects/example/it-school/php/oop/step-game/');
+//path routine
+$server_name = 'http://' . $_SERVER['HTTP_HOST'];
+$uri = explode(DIRECTORY_SEPARATOR, $_SERVER['PHP_SELF']);
+$path = '';
+foreach ($uri as $dir) {
+    if ($dir != end($uri)) $path .= $dir . DIRECTORY_SEPARATOR;
+}
+define('APP_BASE', $server_name . $path);
+
+$app_dir = dirname(__FILE__);
+define('APP_DIR', $app_dir . '/');

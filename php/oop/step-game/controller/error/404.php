@@ -6,7 +6,7 @@
  * Time: 17:37
  */
 
-class ControllerError404  {
+class ControllerError404 {
 
     public function index() {
 

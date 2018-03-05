@@ -11,20 +11,36 @@ namespace GameSystem;
 class Router {
 
     public $path;
-    public $route;
-    public $class;
+    public $controller;
     public $method = 'index';
+    public $class;
+
+    private function notFound() {
+        include(APP_DIR . 'controller/error/404.php');
+        $class = 'ControllerError404';
+        $controller = new $class;
+        $action = array($controller, 'index');
+        return call_user_func($action, '');
+    }
 
     private function makeAction($route) {
         $route = explode('/', $route);
-        $this->path = $route[0];
-        $this->route = $route[1];
+        $this->path = $route[0]; //get controller path
+        $this->controller = $route[1]; //get controller file
 
-        $file = APP_DIR . 'controller/' . $this->path . '/' . $this->route . '.php';
+        if (isset($route[2])) {
+            if (!empty($route[2])) {
+                $this->method = $route[2]; //get class method
+            } else {
+                $this->notFound();
+            }
+        }
+
+        $file = APP_DIR . 'controller/' . $this->path . '/' . $this->controller . '.php';
         if (is_file($file)) {
             include($file);
 
-            $this->class = 'Controller' . capitalizeString($this->path) . capitalizeString($this->route);     //ControllerAccountLogin
+            $this->class = 'Controller' . capitalizeString($this->path) . capitalizeString($this->controller);     //ControllerAccountLogin
 
             $controller = new $this->class();
 
@@ -32,14 +48,12 @@ class Router {
 
             if (is_callable($action)) {
                 return call_user_func($action, '');
+            } else {
+                $this->notFound();
             }
 
         } else {
-            include(APP_DIR . 'controller/error/404.php');
-            $this->class = 'ControllerError404';
-            $controller = new $this->class();
-            $action = array($controller, $this->method);
-            return call_user_func($action, '');
+            $this->notFound();
         }
     }
 
