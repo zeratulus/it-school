@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fetch Example</title>
+</head>
+<body>
+
+<pre><code id="json"></code></pre>
+
+<script>
+    async function fetchGithubUser(user_name) {
+        const url = 'https://api.github.com/users/'; // ... + github user_name
+
+        let response = await fetch(url + user_name);
+        let user = await response.json();
+
+        document.querySelector('#json').innerHTML = JSON.stringify(user, null, 4);
+    }
+
+    fetchGithubUser('zeratulus');
+</script>
+</body>
+</html>
